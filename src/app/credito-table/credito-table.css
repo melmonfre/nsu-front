@@ -1,0 +1,78 @@
+.table-container {
+  overflow-x: auto;
+  padding: 1rem;
+  background-color: #f9fafb;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+}
+
+.fintech-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: white;
+}
+
+.fintech-table th, .fintech-table td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  font-size: 0.9rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.fintech-table thead {
+  background-color: #1e88e5;
+  color: white;
+  font-weight: 600;
+}
+
+.fintech-table tbody tr:hover {
+  background-color: #f1f7fd;
+  transition: background-color 0.3s ease;
+}
+
+.yes {
+  color: #388e3c;
+  font-weight: bold;
+}
+
+.no {
+  color: #d32f2f;
+  font-weight: bold;
+}
+
+.search-bar {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.search-bar input {
+  flex: 1;
+  padding: 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+.search-bar button {
+  background-color: #1e88e5;
+  color: white;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.search-bar button:hover {
+  background-color: #1669bb;
+}
+
+.no-results {
+  text-align: center;
+  font-style: italic;
+  color: #777;
+  margin-top: 1rem;
+}

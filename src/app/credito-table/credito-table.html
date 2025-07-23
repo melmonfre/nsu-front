@@ -1,0 +1,52 @@
+<div class="table-container">
+  <div class="search-bar">
+    <input
+      type="text"
+      placeholder="Buscar por Número do Crédito..."
+      [(ngModel)]="searchTerm"
+      (keyup.enter)="buscarCreditoPorNumero()"
+    />
+    <button (click)="buscarCreditoPorNumero()">Buscar</button>
+  </div>
+
+  <table class="fintech-table" *ngIf="creditos.length > 0">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Crédito</th>
+        <th>NFSe</th>
+        <th>Data</th>
+        <th>Tipo</th>
+        <th>Simples?</th>
+        <th>Aliquota</th>
+        <th>Faturado</th>
+        <th>Deducao</th>
+        <th>Base Cálculo</th>
+        <th>Valor ISSQN</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let c of creditos; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>{{ c.numeroCredito }}</td>
+        <td>{{ c.numeroNfse }}</td>
+        <td>{{ c.dataConstituicao | date:'dd/MM/yyyy' }}</td>
+        <td>{{ c.tipoCredito }}</td>
+        <td>
+          <span [class.yes]="c.simplesNacional" [class.no]="!c.simplesNacional">
+            {{ c.simplesNacional ? 'Sim' : 'Não' }}
+          </span>
+        </td>
+        <td>{{ c.aliquota | percent:'1.2-2' }}</td>
+        <td>{{ c.valorFaturado | currency:'BRL' }}</td>
+        <td>{{ c.valorDeducao | currency:'BRL' }}</td>
+        <td>{{ c.baseCalculo | currency:'BRL' }}</td>
+        <td>{{ c.valorIssqn | currency:'BRL' }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div *ngIf="creditos.length === 0" class="no-results">
+    Nenhum crédito encontrado.
+  </div>
+</div>
